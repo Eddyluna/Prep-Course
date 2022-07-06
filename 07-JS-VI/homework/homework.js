@@ -22,7 +22,7 @@ function operacionMatematica(n1, n2, cb) {
   //Vamos a recibir una función que realiza una operación matemática como callback junto con dos números.
   //Devolver el callback pasándole como argumentos los números recibidos.
   //Tu código:
-
+cb (n1,n2);
 }
 
 function sumarArray(numeros, cb) {
@@ -48,7 +48,10 @@ function map(array, cb) {
   // Itera sobre cada valor en "array", pásalo a `cb` y luego ubicar el valor devuelto por `cb` en un nuevo array
   // El nuevo array debe tener la misma longitud que el array del argumento
   //Tu código:
-  array.map(cb,array);
+var nuevoArray = array.map(function(elemento){
+  return cb(elemento);
+})
+return nuevoArray;
 }
 
 function filter(array) {
